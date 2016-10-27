@@ -1,0 +1,51 @@
+# Project: storyteller 0.2
+# Makefile created by Dev-C++ 4.9.9.2
+
+CPP  = g++.exe
+CC   = gcc.exe
+WINDRES = windres.exe
+RES  = 
+OBJ  = main.o Characters.o Cityes.o Contries.o Events.o Worlds.o Util.o Arcs.o $(RES)
+LINKOBJ  = main.o Characters.o Cityes.o Contries.o Events.o Worlds.o Util.o Arcs.o $(RES)
+LIBS =  -L"C:/Dev-Cpp/lib"  
+INCS =  -I"C:/Dev-Cpp/include" 
+CXXINCS =  -I"C:/Dev-Cpp/lib/gcc/mingw32/3.4.2/include"  -I"C:/Dev-Cpp/include/c++/3.4.2/backward"  -I"C:/Dev-Cpp/include/c++/3.4.2/mingw32"  -I"C:/Dev-Cpp/include/c++/3.4.2"  -I"C:/Dev-Cpp/include" 
+BIN  = "storyteller 0.2"
+CXXFLAGS = $(CXXINCS)  
+CFLAGS = $(INCS)  
+RM = rm -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before "storyteller 0.2" all-after
+
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o "storyteller 0.2" $(LIBS)
+
+main.o: main.cpp
+	$(CPP) -c main.cpp -o main.o $(CXXFLAGS)
+
+Characters.o: Characters.cpp
+	$(CPP) -c Characters.cpp -o Characters.o $(CXXFLAGS)
+
+Cityes.o: Cityes.cpp
+	$(CPP) -c Cityes.cpp -o Cityes.o $(CXXFLAGS)
+
+Contries.o: Contries.cpp
+	$(CPP) -c Contries.cpp -o Contries.o $(CXXFLAGS)
+
+Events.o: Events.cpp
+	$(CPP) -c Events.cpp -o Events.o $(CXXFLAGS)
+
+Worlds.o: Worlds.cpp
+	$(CPP) -c Worlds.cpp -o Worlds.o $(CXXFLAGS)
+
+Util.o: Util.cpp
+	$(CPP) -c Util.cpp -o Util.o $(CXXFLAGS)
+
+Arcs.o: Arcs.cpp
+	$(CPP) -c Arcs.cpp -o Arcs.o $(CXXFLAGS)
